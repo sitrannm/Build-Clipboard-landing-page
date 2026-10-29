@@ -1,0 +1,649 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Discover Clipboard, the easy way to save, organize, and access your copied snippets across all your devices."
+  >
+
+  <meta name="theme-color" content="#ffffff">
+
+  <title>Clipboard Landing Page | Frontend Mentor</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Tailwind CSS browser build -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-teal: hsl(171, 66%, 44%);
+      --color-blue: hsl(233, 100%, 69%);
+      --color-slate: hsl(210, 10%, 33%);
+      --color-mist: hsl(201, 11%, 66%);
+      --color-haze: hsl(220, 18%, 97%);
+
+      --font-bai: "Bai Jamjuree", sans-serif;
+    }
+  </style>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Bai Jamjuree", sans-serif;
+    }
+
+    .hero-background {
+      background-image: url("./images/bg-header-desktop.png");
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: 100% auto;
+    }
+
+    .download-button {
+      transition:
+        opacity 180ms ease,
+        transform 180ms ease,
+        box-shadow 180ms ease;
+    }
+
+    .download-button:hover {
+      opacity: 0.8;
+      transform: translateY(-2px);
+    }
+
+    .download-button:focus-visible,
+    .footer-link:focus-visible,
+    .social-link:focus-visible {
+      outline: 3px solid var(--color-blue);
+      outline-offset: 4px;
+    }
+
+    .footer-link {
+      transition: color 180ms ease;
+    }
+
+    .social-link {
+      transition:
+        opacity 180ms ease,
+        transform 180ms ease;
+    }
+
+    .social-link:hover {
+      opacity: 0.7;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 640px) {
+      .hero-background {
+        background-image: url("./images/bg-header-mobile.png");
+        background-size: 100% auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-mist antialiased">
+
+  <!-- ==================== HEADER / HERO ==================== -->
+  <header id="home" class="hero-background px-6 pt-24 pb-10 text-center sm:pt-28 lg:pt-32">
+
+    <a
+      href="#home"
+      aria-label="Clipboard home"
+      class="inline-block"
+    >
+      <img
+        src="./images/logo.svg"
+        alt="Clipboard"
+        width="125"
+        height="125"
+        class="mx-auto h-auto w-24 sm:w-28"
+      >
+    </a>
+
+    <div class="mx-auto mt-14 max-w-3xl sm:mt-16">
+
+      <h1 class="text-3xl leading-tight font-semibold tracking-tight text-slate sm:text-4xl lg:text-5xl">
+        A history of everything you copy
+      </h1>
+
+      <p class="mx-auto mt-5 max-w-2xl text-base leading-7 sm:text-lg sm:leading-8">
+        Clipboard allows you to track and organize everything you copy.
+        Instantly access your clipboard on all your devices.
+      </p>
+
+      <div class="mt-8 flex flex-col items-center justify-center gap-5 sm:flex-row">
+
+        <a
+          href="#download"
+          class="download-button w-full max-w-xs rounded-full bg-teal px-8 py-4 text-base font-semibold text-white shadow-lg shadow-teal/30 sm:w-auto"
+        >
+          Download for iOS
+        </a>
+
+        <a
+          href="#download"
+          class="download-button w-full max-w-xs rounded-full bg-blue px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue/30 sm:w-auto"
+        >
+          Download for Mac
+        </a>
+
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ==================== SNIPPETS ==================== -->
+    <section
+      id="features"
+      class="mx-auto mt-24 max-w-7xl px-6 sm:mt-32 lg:mt-36"
+    >
+
+      <div class="mx-auto max-w-3xl text-center">
+
+        <h2 class="text-2xl leading-tight font-semibold text-slate sm:text-3xl">
+          Keep track of your snippets
+        </h2>
+
+        <p class="mt-5 text-base leading-7 sm:text-lg sm:leading-8">
+          Clipboard instantly stores any item you copy in the cloud,
+          meaning you can access your snippets immediately on all your
+          devices. Our Mac and iOS apps will help you organize everything.
+        </p>
+
+      </div>
+
+      <div class="mt-14 grid items-center gap-12 lg:mt-20 lg:grid-cols-[1.2fr_0.8fr] lg:gap-24">
+
+        <div class="lg:-ml-20">
+          <img
+            src="./images/image-computer.png"
+            alt="A desktop computer displaying the Clipboard application"
+            width="752"
+            height="572"
+            loading="lazy"
+            class="mx-auto w-full max-w-2xl lg:max-w-none"
+          >
+        </div>
+
+        <ul class="mx-auto flex max-w-md flex-col gap-10 text-center lg:mx-0 lg:text-left">
+
+          <li>
+            <h3 class="text-xl font-semibold text-slate">
+              Quick Search
+            </h3>
+
+            <p class="mt-3 leading-7">
+              Easily search your snippets by content, category, web address,
+              application, and more.
+            </p>
+          </li>
+
+          <li>
+            <h3 class="text-xl font-semibold text-slate">
+              iCloud Sync
+            </h3>
+
+            <p class="mt-3 leading-7">
+              Instantly saves and syncs snippets across all your devices.
+            </p>
+          </li>
+
+          <li>
+            <h3 class="text-xl font-semibold text-slate">
+              Complete History
+            </h3>
+
+            <p class="mt-3 leading-7">
+              Retrieve any snippets from the first moment you started
+              using the app.
+            </p>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ==================== ACCESS ANYWHERE ==================== -->
+    <section
+      id="access"
+      class="mx-auto mt-28 max-w-7xl px-6 text-center sm:mt-36 lg:mt-40"
+    >
+
+      <div class="mx-auto max-w-3xl">
+
+        <h2 class="text-2xl leading-tight font-semibold text-slate sm:text-3xl">
+          Access Clipboard anywhere
+        </h2>
+
+        <p class="mt-5 text-base leading-7 sm:text-lg sm:leading-8">
+          Whether you're on the go or at your computer, you can access
+          all your Clipboard snippets in a few simple clicks.
+        </p>
+
+      </div>
+
+      <img
+        src="./images/image-devices.png"
+        alt="Clipboard available on a smartphone and tablet"
+        width="905"
+        height="575"
+        loading="lazy"
+        class="mx-auto mt-14 w-full max-w-4xl sm:mt-20"
+      >
+
+    </section>
+
+
+    <!-- ==================== WORKFLOW ==================== -->
+    <section
+      id="workflow"
+      class="mx-auto mt-24 max-w-7xl px-6 text-center sm:mt-32 lg:mt-36"
+    >
+
+      <div class="mx-auto max-w-3xl">
+
+        <h2 class="text-2xl leading-tight font-semibold text-slate sm:text-3xl">
+          Supercharge your workflow
+        </h2>
+
+        <p class="mt-5 leading-7 sm:text-lg">
+          We've got the tools to boost your productivity.
+        </p>
+
+      </div>
+
+      <ul class="mt-14 grid gap-12 sm:mt-20 lg:grid-cols-3 lg:gap-8">
+
+        <!-- Feature 1 -->
+        <li class="flex flex-col items-center">
+
+          <div class="flex h-12 items-center justify-center">
+            <img
+              src="./images/icon-blacklist.svg"
+              alt=""
+              width="44"
+              height="40"
+              loading="lazy"
+              class="max-h-11 w-auto"
+            >
+          </div>
+
+          <h3 class="mt-8 text-xl font-semibold text-slate">
+            Create blacklists
+          </h3>
+
+          <p class="mt-4 max-w-sm leading-7">
+            Ensure sensitive information never makes its way to your
+            clipboard by excluding certain sources.
+          </p>
+
+        </li>
+
+        <!-- Feature 2 -->
+        <li class="flex flex-col items-center">
+
+          <div class="flex h-12 items-center justify-center">
+            <img
+              src="./images/icon-text.svg"
+              alt=""
+              width="36"
+              height="32"
+              loading="lazy"
+              class="max-h-11 w-auto"
+            >
+          </div>
+
+          <h3 class="mt-8 text-xl font-semibold text-slate">
+            Plain text snippets
+          </h3>
+
+          <p class="mt-4 max-w-sm leading-7">
+            Remove unwanted formatting from copied text for a
+            consistent look.
+          </p>
+
+        </li>
+
+        <!-- Feature 3 -->
+        <li class="flex flex-col items-center">
+
+          <div class="flex h-12 items-center justify-center">
+            <img
+              src="./images/icon-preview.svg"
+              alt=""
+              width="50"
+              height="32"
+              loading="lazy"
+              class="max-h-11 w-auto"
+            >
+          </div>
+
+          <h3 class="mt-8 text-xl font-semibold text-slate">
+            Sneak preview
+          </h3>
+
+          <p class="mt-4 max-w-sm leading-7">
+            Quick preview of all snippets on your Clipboard for
+            easy access.
+          </p>
+
+        </li>
+
+      </ul>
+    </section>
+
+
+    <!-- ==================== COMPANY LOGOS ==================== -->
+    <section
+      class="mx-auto mt-24 max-w-7xl px-6 sm:mt-32 lg:mt-36"
+      aria-label="Companies featured in the design"
+    >
+
+      <ul class="flex flex-col items-center justify-center gap-14 sm:flex-row sm:flex-wrap sm:gap-x-16 sm:gap-y-12 lg:justify-between lg:gap-8">
+
+        <li>
+          <img
+            src="./images/logo-google.png"
+            alt="Google"
+            width="165"
+            height="49"
+            loading="lazy"
+            class="max-h-10 w-auto"
+          >
+        </li>
+
+        <li>
+          <img
+            src="./images/logo-ibm.png"
+            alt="IBM"
+            width="135"
+            height="56"
+            loading="lazy"
+            class="max-h-10 w-auto"
+          >
+        </li>
+
+        <li>
+          <img
+            src="./images/logo-microsoft.png"
+            alt="Microsoft"
+            width="161"
+            height="35"
+            loading="lazy"
+            class="max-h-10 w-auto"
+          >
+        </li>
+
+        <li>
+          <img
+            src="./images/logo-hp.png"
+            alt="Hewlett-Packard"
+            width="135"
+            height="56"
+            loading="lazy"
+            class="max-h-10 w-auto"
+          >
+        </li>
+
+        <li>
+          <img
+            src="./images/logo-vector-graphics.png"
+            alt="Vector Graphics"
+            width="125"
+            height="30"
+            loading="lazy"
+            class="max-h-10 w-auto"
+          >
+        </li>
+
+      </ul>
+    </section>
+
+
+    <!-- ==================== DOWNLOAD CTA ==================== -->
+    <section
+      id="download"
+      class="mx-auto mt-28 max-w-3xl px-6 py-4 text-center sm:mt-36"
+    >
+
+      <h2 class="text-2xl leading-tight font-semibold text-slate sm:text-3xl">
+        Clipboard for iOS and Mac OS
+      </h2>
+
+      <p class="mt-5 text-base leading-7 sm:text-lg sm:leading-8">
+        Available for free on the App Store. Also available for Mac OS,
+        adding to the full Clipboard experience.
+      </p>
+
+      <div class="mt-8 flex flex-col items-center justify-center gap-5 sm:flex-row">
+
+        <a
+          href="#home"
+          class="download-button w-full max-w-xs rounded-full bg-teal px-8 py-4 text-base font-semibold text-white shadow-lg shadow-teal/30 sm:w-auto"
+        >
+          Download for iOS
+        </a>
+
+        <a
+          href="#home"
+          class="download-button w-full max-w-xs rounded-full bg-blue px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue/30 sm:w-auto"
+        >
+          Download for Mac
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="mt-24 bg-haze px-6 py-12 sm:mt-32">
+
+    <div class="mx-auto flex max-w-7xl flex-col items-center gap-10 text-center lg:flex-row lg:justify-between lg:text-left">
+
+      <!-- Footer logo -->
+      <a href="#home" aria-label="Clipboard home">
+        <img
+          src="./images/logo.svg"
+          alt="Clipboard"
+          width="125"
+          height="125"
+          loading="lazy"
+          class="h-auto w-14"
+        >
+      </a>
+
+      <!-- Footer navigation -->
+      <nav aria-label="Footer navigation">
+
+        <ul class="grid grid-cols-1 gap-x-16 gap-y-5 sm:grid-cols-3 sm:text-left">
+
+          <li>
+            <a
+              href="#home"
+              class="footer-link text-base font-semibold text-slate hover:text-teal"
+            >
+              FAQs
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#contact"
+              class="footer-link text-base font-semibold text-slate hover:text-teal"
+            >
+              Contact Us
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#features"
+              class="footer-link text-base font-semibold text-slate hover:text-teal"
+            >
+              Privacy Policy
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#features"
+              class="footer-link text-base font-semibold text-slate hover:text-teal"
+            >
+              Press Kit
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#workflow"
+              class="footer-link text-base font-semibold text-slate hover:text-teal"
+            >
+              Install Guide
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- Social media icons -->
+      <ul class="flex items-center gap-6" aria-label="Social media">
+
+        <li>
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            class="social-link inline-flex"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              class="text-slate hover:text-teal"
+            >
+              <path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2v-2c0-.9.3-1.6 1.6-1.6h1.7V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4v2.2H7.3v3.2h2.8V21z"/>
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://www.x.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X"
+            class="social-link inline-flex"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              class="text-slate hover:text-teal"
+            >
+              <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-5-7.2L5.6 22H2.4l7.3-8.4L1.9 2h6.5l4.5 6.7zm-1.1 18h1.7L7.4 3.9H5.6z"/>
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            class="social-link inline-flex"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              class="text-slate hover:text-teal"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- Attribution -->
+    <p class="mt-10 text-center text-sm leading-6 text-slate">
+
+      Challenge by
+      <a
+        href="https://www.frontendmentor.io/challenges/clipboard-landing-page-5cc9bccd6c4c91111378ecb9"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-semibold underline hover:text-teal"
+      >
+        Frontend Mentor
+      </a>.
+
+      Coded by
+      <a
+        href="https://github.com/sitrannm"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-semibold underline hover:text-teal"
+      >
+        Sitra
+      </a>.
+
+    </p>
+
+  </footer>
+
+</body>
+</html>
+```
